@@ -4,92 +4,253 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial - Equipe</title>
-    <!-- Estilos simples para manter a página organizada -->
+    <!-- Estilos Modernos com CSS Flexbox e Menus Suspensos -->
     <style>
-		header {
-			font-family: Arial, sans-serif;
-			text-align: center;
-			background-color: #9ddfe2;
-		}
+        /* Reset básico para margens e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-			background-color: #9ddfe2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
         }
-		article{
-			font-family: Arial, sans-serif;
-			background-color: #a5b9ff;
-		}
+
+        /* Estilo do Header com Navegação */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+        }
+	.container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Navegação */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+	    /* Dropdown Menu */
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            z-index: 1000;
+        }
+
+        .dropdown li a {
+            padding: 10px 15px;
+        }
+
+        .dropdown li a:hover {
+            background-color: #3d566e;
+        }
+
+        /* Estilo do Conteúdo Principal */
+        main {
+            padding: 20px 0;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         h1, h2 {
-        	color: #2c3e50;
-		margin: 1em;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
+
 	h3 {
-		text-indent: 2em;
-		margin: 1em;
-	}
-        ul {
-        	list-style-type: none;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
-	p {
-    		text-indent: 2em;
-		margin: 1em;
-	}
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+            }
+
+            nav ul li {
+                text-align: center;
+            }
+	nav ul li:hover .dropdown {
+                position: static;
+            }
+
+            nav .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5em;
+            }
+        }
+
+        /* Menu Toggle (para dispositivos móveis) */
+        .menu-toggle {
+            display: none;
+            color: #fff;
+        }
     </style>
+    <!-- Ícone para menu móvel -->
+    <script>
+        function toggleMenu() {
+            const navUl = document.getElementById('nav-ul');
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+            }
+        }
+</script>
 </head>
-<header>
-    <!-- Nome da Equipe -->
-    <h1>Grupomon</h1>
-	<!-- Membros da equipe -->
-    <h2>Membros</h2>
-        <p>Gabriel Victorelli RA:11201920125</p>
-        <p>Marlon Benedito RA:11201920132</p>
-        <p>Kelvin Bezerra RA:11202022241</p>
-</header>
-
 <body>
-<article>
-    <!-- Texto Introdutório -->
-    <h2>Texto Introdutório</h2>
-    <p>
-        Esta página foi criada para organizar os trabalhos e relatórios da equipe. Aqui você encontrará 
-        informações sobre nossas atividades e projetos.
-    </p>
-    
-    <!-- Informações adicionais -->
-    <h2>Informações</h2>
-    <p>
-        Abaixo estão os links para acessar nossas pastas de trabalhos e relatórios. Os arquivos estão organizados
-        para facilitar a navegação e compreensão de cada etapa dos projetos.
-    </p>
-    
-    <!-- Estrutura de pastas -->
-    <h2>Pastas</h2>
-    
-    <!-- Pasta de Trabalhos -->
-    <h3>Pasta de Trabalhos</h3>
-    <ul>
-        <p>
-		Em desenvolvimento.
-		</p>
-    </ul>
-    
-    <!-- Pasta de Relatórios -->
-    <h3>Pasta de Relatórios</h3>
-    <ul>
-        <li><a href="Relatorio_Lab01/Relatorio01.html">Relatório Lab 1</a></li>
-        <!-- Mais relatórios podem ser adicionados conforme necessário -->
-    </ul>
-</article>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Grupomon</div>
+                <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+                <ul id="nav-ul">
+                    <li><a href="#">Início</a></li>
+                    <li>
+                        <a href="#">Equipe</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Membros</a></li>
+                            <li><a href="#">Projetos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Pastas</a>
+                        <ul class="dropdown">
+                            <li><a href="#trabalhos">Pastas de Trabalhos</a></li>
+                            <li><a href="#relatorios">Pastas de Relatórios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#programas">Programas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main class="container">
+        <div class="card">
+            <h2>Texto Introdutório</h2>
+            <p>
+                Esta página foi criada para organizar os trabalhos e relatórios da equipe. Aqui você encontrará 
+                informações sobre nossas atividades e projetos.
+            </p>
+        </div>
 
-    <!-- Links para programas podem ser incluídos aqui -->
-    <h2>Links para Programas</h2>
-    <p>
-        Você pode acessar os códigos e implementações dos trabalhos através do link abaixo:
-        <ul>
-            <li><a href="https://github.com/Grupomon/grupomon.github.io" target="_blank">Link para o Github</a></li>
-        </ul>
-    </p>
+        <div class="card">
+            <h2>Informações</h2>
+            <p>
+                Abaixo estão os links para acessar nossas pastas de trabalhos e relatórios. Os arquivos estão organizados
+                para facilitar a navegação e compreensão de cada etapa dos projetos.
+            </p>
+        </div>
+<div class="card" id="trabalhos">
+            <h2>Pastas</h2>
+            <h3>Pasta de Trabalhos</h3>
+            <p>Em desenvolvimento.</p>
+        </div>
 
+        <div class="card" id="relatorios">
+            <h3>Pasta de Relatórios</h3>
+            <ul>
+                <li><a href="Relatorio_Lab01/Relatorio01.html">Relatório Lab 1</a></li>
+                <!-- Mais relatórios podem ser adicionados conforme necessário -->
+            </ul>
+        </div>
+
+        <div class="card" id="programas">
+            <h2>Links para Programas</h2>
+            <p>
+                Você pode acessar os códigos e implementações dos trabalhos através do link abaixo:
+            </p>
+            <ul>
+                <li><a href="https://github.com/Grupomon/grupomon.github.io" target="_blank">Link para o Github</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Membros da Equipe</h2>
+            <ul>
+                <li>Gabriel Victorelli RA:11201920125</li>
+                <li>Marlon Benedito RA:11201920132</li>
+                <li>Kelvin Bezerra RA:11202022241</li>
+            </ul>
+        </div>
+    </main>
+  <footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
+        <p>&copy; 2024 Grupomon. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
+
+
+
