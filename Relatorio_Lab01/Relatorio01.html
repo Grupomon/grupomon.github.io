@@ -4,176 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório 01</title>
+    <!-- Estilos Modernos com CSS Flexbox -->
     <style>
-		header {
-			font-family: Arial, sans-serif;
-			text-align: center;
-			background-color: #9ddfe2;
-		}
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-			background-color: #9ddfe2;
+        /* Reset básico para margens e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-		article{
-			margin: 20px;
-			font-family: Arial, sans-serif;
-			background-color: #a5b9ff;
-		}
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Estilo do Header com Navegação */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Navegação */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+
+        /* Estilo do Conteúdo Principal */
+        main {
+            padding: 20px 0;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         h1, h2 {
             color: #2c3e50;
+            margin-bottom: 15px;
         }
-        ul {
-            list-style-type: none;
-        }
-		video.center {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		p {
-			text-align: justify;;
-		}
-		img.center{
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-		}
-	p {
-    		text-indent: 2em;
-		margin: 1em;
-	}
-	h3 {
-    		text-indent: 2em;
-	}
-	.video-container {
-    		display: flex;               /* Usa Flexbox */
-    		flex-direction: column;      /* Alinha em coluna (vídeo em cima, frase embaixo) */
-    		align-items: center;         /* Centraliza horizontalmente */
-    		margin-bottom: 20px;         /* Espaçamento entre os blocos de vídeo e texto */
-	}
 
-	.description {
-    		text-align: center;          /* Centraliza o texto */
-    		margin-top: 10px;            /* Margem superior para distanciar do vídeo */
-	}
-	.imagem-container {
-    		display: flex;               /* Usa Flexbox */
-    		flex-direction: column;      /* Alinha em coluna (vídeo em cima, frase embaixo) */
-    		align-items: center;         /* Centraliza horizontalmente */
-    		margin-bottom: 20px;         /* Espaçamento entre os blocos de vídeo e texto */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        video, img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+            }
+            nav .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5em;
+            }
+        }
+
+        /* Menu Toggle (para dispositivos móveis) */
+        .menu-toggle {
+            display: none;
+            color: #fff;
+        }
     </style>
+    <script>
+        function toggleMenu() {
+            const navUl = document.getElementById('nav-ul');
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+            }
+        }
+    </script>
 </head>
-<header>
-	<h1>Relatório 01</h1>
-</header>
 <body>
-	<article>
-	<h2>Introdução</h2>
-	<p>	
-		O processamento de vídeo tornou-se uma ferramenta essencial em diversas áreas, como segurança, entretenimento, saúde e automação industrial. 
-	Este relatório aborda o desenvolvimento e a implementação de um sistema de captura, processamento e análise de vídeo utilizando câmeras conectadas a uma plataforma Linux. 
-	O objetivo é explorar as etapas de entrada e saída de vídeo, desde a captura pela câmera até o processamento e visualização dos dados.
-	</p>
-	<p>
-		Utilizando Linux como sistema operacional devido sua flexibilidade e suporte a uma vasta gama de bibliotecas e ferramentas de código aberto voltadas para o processamento de vídeo. 
-	Como as ferramentas OpenCV, é possível realizar desde simples transformações visuais até complexas análises em tempo real.
-	</p><p>OpenCV: Biblioteca de visão computacional que permite a captura, manipulação e processamento de imagens e vídeos. 
-	É amplamente usada para aplicar filtros, detectar objetos, rastrear movimentos, entre outros.</p>
-	<h2>Fundamentos Básicos</h2>
-	<p>A entrada de vídeo refere-se ao processo de captura de imagens em movimento a partir de uma fonte, como câmeras, arquivos de vídeo ou transmissões ao vivo. 
-	As principais fontes de entrada de vídeo incluem: <b>Câmeras Digitais, Webcams, Arquivos de vídeo</b>.
-	</p><p>A saída de vídeo refere-se ao processo de exibir, transmitir ou armazenar os dados de vídeo após serem processados. 
-	As formas mais comuns de saída incluem:<b>Monitores, telas, armazenamento em arquivos</b>.</p>
-	<h2>Materiais e Metódos</h2>
-	<h3>Materiais:</h3>
-	<ul>
-		<li>Webcam</li>
-		<li>Objeto</li>
-		<li>Programas de captura</li>
-		<li>Linux</li>
-		<li>Imagens e videos providenciados</li>
-	</ul>
-	<h3>Metódos</h3>
-	<p>Foram utilizadas as ferramentas:</p>
-	<p><b>video_read_from_file:</b> onde o arquivo de entrada 
-	era um arquivo de vídeo e a saída a execução do vídeo no monitor.</p>
-	<p><b>video_read_from_image_sequence:</b> onde a entrada é uma pasta 
-	com uma sequencias de imagens e a saída é a execução da imagens como um vídeo.
-	Neste programa foi realizado uma modificação no arquivo .cpp 
-	pois o nome da pasta com as imagens estava errado.</p>
-	<p><b>video_read_from_webcam:</b> onde a entrada são os frames 
-	capturados pela webcam e a saída é a exibição do vídeo no monitor.</p>
-	<p><b>video_write_from_webcam:</b> onde a entrada são os frames 
-	da webcam e a saída é um arquivo de vídeo com a captura da webcam.</p>
-	<p><b>video_write_to_file:</b> onde a entrada é um arquivo de 
-	vídeo e a saída é outro arquivo de vídeo.</p>
-	<p>A imagem dos avatares e dos membros do grupo foi montada em um editor de imagens.</p>
-	<h2>Resultados e Analises</h2>
-	<h3>	Videos Gravados:</h3>
-		<div class="video-container">
-    			<video width="320" height="240" controls>
-        			<source src="objeto_lento.mp4" type="video/mp4">
-    			</video>
-    			<p class="description">Objeto com movimentos lentos</p>
-		</div>
-		
-		<div class="video-container">
-    			<video width="320" height="240" controls>
-        			<source src="objeto_rapido.mp4" type="video/mp4">
-    			</video>
-    			<p class="description">Objeto com movimentos rápidos</p>
-		</div>
-		
-		<div class="video-container">
-    			<video width="320" height="240" controls>
-        			<source src="pessoa_lento.mp4" type="video/mp4">
-    			</video>
-    			<p class="description">Pessoa com movimentos lentos</p>
-		</div>
-		
-		<div class="video-container">
-    			<video width="320" height="240" controls>
-        			<source src="Pessoa Rapido.mp4" type="video/mp4">
-    			</video>
-    			<p class="description">Pessoa com movimentos rápidos</p>
-		</div>
-		
-	<h3>	Imagens tiradas:</h3>
-		<div class="imagem-container">
-			<img class = "center" src="Pokemon-G4-610x325.jpg" alt="Avatares" width="480" height="270">
-			<p class = "description">Avatares</p>
-		</div>
-		<div class="imagem-container">
-			<img class = "center" src="imagem_montada.jpg" alt="Avatares" width="480" height="270">
-			<p class = "description">Imagem de todos os membros da equipe</p>
-		</div>
-		
-	<h3>	Análise:</h3>
-	<p>Os vídeos gravados com movimentos lentos e rápidos têm diferenças de taxas de quadros,
-	além da queda da resolução nos vídeos com movimentos rápidos, a estabilidade da imagem também
-	é menor nos vídeos rápidos com distorções de movimento como desfoques e borrões, enquanto so vídeos mais lentos
-	apturam melhor a ação.</p>
-	<h2>Conclusões e Comentários Finais</h2>
-	<p>
-	O presente relatório demonstrou de forma clara e prática as capacidades e a
-	importância do processamento de vídeo em diferentes contextos, 
-	com foco no uso de câmeras conectadas a uma plataforma Linux. 
-	A implementação de um sistema de captura e análise de vídeo, utilizando a biblioteca OpenCV, 
-	revelou-se eficaz para a realização de tarefas que vão desde a simples captura até a manipulação 
-	e visualização de dados em tempo real.
-	</p><p>
-	Os resultados obtidos a partir dos vídeos gravados evidenciaram as diferenças significativas entre movimentos lentos e rápidos. 
-	Notou-se que os vídeos com movimentos rápidos apresentaram uma maior taxa de quadros, mas também uma maior incidência de desfoques e distorções, 
-	resultando em uma qualidade visual inferior. Por outro lado, os vídeos que capturaram movimentos lentos permitiram uma melhor visualização dos detalhes e da ação, 
-	mostrando como a escolha da taxa de quadros e da resolução pode impactar diretamente a eficácia da análise visual.
-	</p><p>
-	Além disso, a versatilidade do sistema operacional Linux e a disponibilidade de ferramentas de código aberto 
-	como o OpenCV são recursos valiosos que possibilitam o desenvolvimento de aplicações robustas para o 
-	processamento de vídeo. A utilização de webcams e a implementação de métodos de captura e gravação demonstraram 
-	a viabilidade de soluções práticas que podem ser aplicadas em diversas áreas, como segurança, saúde, 
-	e entretenimento.
-	</p>
-	</article>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Grupomon</div>
+                <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+                <ul id="nav-ul">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Relatório 01</a></li>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#">Pastas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="card">
+            <h1>Relatório 01</h1>
+            <h2>Introdução</h2>
+            <p>O processamento de vídeo tornou-se uma ferramenta essencial em diversas áreas, como segurança, entretenimento, saúde e automação industrial...</p>
+
+            <h2>Fundamentos Básicos</h2>
+            <p>A entrada de vídeo refere-se ao processo de captura de imagens em movimento...</p>
+
+            <h2>Materiais e Métodos</h2>
+            <ul>
+                <li>Webcam</li>
+                <li>Objeto</li>
+                <li>Programas de captura</li>
+                <li>Linux</li>
+            </ul>
+
+            <h2>Resultados e Análises</h2>
+            <div class="video-container">
+                <video width="320" height="240" controls>
+                    <source src="objeto_lento.mp4" type="video/mp4">
+                </video>
+                <p class="description">Objeto com movimentos lentos</p>
+            </div>
+            <!-- Mais vídeos e conteúdo -->
+
+        </div>
+    </main>
+    <footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
+        <p>&copy; 2024 Grupomon. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
+
