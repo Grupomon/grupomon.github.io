@@ -57,6 +57,11 @@
     		text-align: center;          /* Centraliza o texto */
     		margin-top: 10px;            /* Margem superior para distanciar do vídeo */
 	}
+	.imagem-container {
+    		display: flex;               /* Usa Flexbox */
+    		flex-direction: column;      /* Alinha em coluna (vídeo em cima, frase embaixo) */
+    		align-items: center;         /* Centraliza horizontalmente */
+    		margin-bottom: 20px;         /* Espaçamento entre os blocos de vídeo e texto */
     </style>
 </head>
 <header>
@@ -135,10 +140,14 @@
 		</div>
 		
 	<h3>	Imagens tiradas:</h3>
-		<p><img class = "center" src="Pokemon-G4-610x325.jpg" alt="Avatares" width="480" height="270"></p>
-		<p class = "a">Avatares</p>
-		<p><img class = "center" src="imagem_montada.jpg" alt="imagem_montada" width="480" height="270"></p>
-		<p class = "a">Imagem de todos os membros da equipe</p>
+		<div class="imagem-container">
+			<img class = "center" src="Pokemon-G4-610x325.jpg" alt="Avatares" width="480" height="270">
+			<p class = "description">Avatares</p>
+		</div>
+		<div class="imagem-container">
+			<img class = "center" src="imagem_montada.jpg" alt="Avatares" width="480" height="270">
+			<p class = "description">Imagem de todos os membros da equipe</p>
+		</div>
 		
 	<h3>	Análise:</h3>
 	<p>Os vídeos gravados com movimentos lentos e rápidos têm diferenças de taxas de quadros,
