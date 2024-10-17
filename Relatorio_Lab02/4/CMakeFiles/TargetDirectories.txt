@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Lab2/4/CMakeFiles/desafio.dir
+/home/ufabc/Documentos/gabrielcv/Lab2/4/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Lab2/4/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Lab2/Sal e Pimenta/CMakeFiles/SalPimenta.dir
+/home/ufabc/Documentos/gabrielcv/Lab2/Sal e Pimenta/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Lab2/Sal e Pimenta/CMakeFiles/rebuild_cache.dir
