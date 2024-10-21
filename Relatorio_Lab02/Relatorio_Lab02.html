@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Equipe</title>
+    <!-- Estilos Modernos com CSS Flexbox e Menus Suspensos -->
+    <style>
+        /* Reset básico para margens e padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+		img {
+			max-width: 100%; /* A imagem se ajusta ao tamanho da tela */
+			height: auto;    /* Mantém a proporção correta da imagem */
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+    	}
+        /* Estilo do Header com Navegação */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+        }
+		.description {
+            text-align: center;
+            margin-top: 10px;
+        }
+	.container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Navegação */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+	    /* Dropdown Menu */
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            z-index: 1000;
+        }
+
+        .dropdown li a {
+            padding: 10px 15px;
+        }
+
+        .dropdown li a:hover {
+            background-color: #3d566e;
+        }
+
+        /* Estilo do Conteúdo Principal */
+        main {
+            padding: 20px 0;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+	h3 {
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+            }
+
+            nav ul li {
+                text-align: center;
+            }
+	nav ul li:hover .dropdown {
+                position: static;
+            }
+
+            nav .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5em;
+            }
+        }
+
+        /* Menu Toggle (para dispositivos móveis) */
+        .menu-toggle {
+            display: none;
+            color: #fff;
+        }
+    </style>
+    <!-- Ícone para menu móvel -->
+    <script>
+        function toggleMenu() {
+            const navUl = document.getElementById('nav-ul');
+            if (navUl.style.display === 'flex') {
+                navUl.style.display = 'none';
+            } else {
+                navUl.style.display = 'flex';
+                navUl.style.flexDirection = 'column';
+            }
+        }
+</script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Grupomon</div>
+                <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+                <ul id="nav-ul">
+                    <li><a href="#">Início</a></li>
+                    <li>
+                        <a href="#">Equipe</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Membros</a></li>
+                            <li><a href="#">Projetos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Pastas</a>
+                        <ul class="dropdown">
+                            <li><a href="#trabalhos">Pastas de Trabalhos</a></li>
+                            <li><a href="#relatorios">Pastas de Relatórios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#programas">Programas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	<main class="container">
+		<div class="card">
+			<h1>Relatório 02</h1>
+            <h2>Introdução</h2>
+        </div>
+		<div class="card">
+            <h2>Exercicio 1</h2>
+			<p></p>
+			<h2>Filtros 3X3</h2>
+			<p></p>
+			<img class = "center" src="1/Filtros 3x3/imagem_bilateral.jpg" alt="3x3" width="480" height="270">
+			<p class="description">3X3 Bilateral</p>
+			<img class = "center" src="1/Filtros 3x3/imagem_gaussiana.jpg" alt="3x3" width="480" height="270">
+			<p class="description">3X3 Gaussiana</p>
+			<img class = "center" src="1/Filtros 3x3/imagem_media.jpg" alt="3x3" width="480" height="270">
+			<p class="description">3X3 Media</p>
+			<img class = "center" src="1/Filtros 3x3/imagem_mediana.jpg" alt="3x3" width="480" height="270">
+			<p class="description">3X3 Mediana</p>
+			<h2>Filtros 5X5</h2>
+			<p></p>
+			<img class = "center" src="1/Filtros 5x5/imagem_bilateral.jpg" alt="5x5" width="480" height="270">
+			<p class="description">5X5 Bilateral</p>
+			<img class = "center" src="1/Filtros 5x5/imagem_gaussiana.jpg" alt="5x5" width="480" height="270">
+			<p class="description">5X5 Gaussiana</p>
+			<img class = "center" src="1/Filtros 5x5/imagem_media.jpg" alt="5x5" width="480" height="270">
+			<p class="description">5X5 Media</p>
+			<img class = "center" src="1/Filtros 5x5/imagem_mediana.jpg" alt="5x5" width="480" height="270">
+			<p class="description">5X5 Mediana</p>
+			<h2>Filtros 7X7</h2>
+			<p></p>
+			<img class = "center" src="1/Filtros 7x7/imagem_bilateral.jpg" alt="7x7" width="480" height="270">
+			<p class="description">7X7 Bilateral</p>
+			<img class = "center" src="1/Filtros 7x7/imagem_gaussiana.jpg" alt="7x7" width="480" height="270">
+			<p class="description">7X7 Gaussiana</p>
+			<img class = "center" src="1/Filtros 7x7/imagem_media.jpg" alt="7x7" width="480" height="270">
+			<p class="description">7X7 Media</p>
+			<img class = "center" src="1/Filtros 7x7/imagem_mediana.jpg" alt="7x7" width="480" height="270">
+			<p class="description">7X7 Mediana</p>
+			<h2>Filtros 11X11</h2>
+			<p></p>
+			<img class = "center" src="1/Filtros 11x11/imagem_bilateral.jpg" alt="11x11" width="480" height="270">
+			<p class="description">11X11 Bilateral</p>
+			<img class = "center" src="1/Filtros 11x11/imagem_gaussiana.jpg" alt="11x11" width="480" height="270">
+			<p class="description">11X11 Gaussiana</p>
+			<img class = "center" src="1/Filtros 11x11/imagem_media.jpg" alt="11x11" width="480" height="270">
+			<p class="description">11X11 Media</p>
+			<img class = "center" src="1/Filtros 11x11/imagem_mediana.jpg" alt="11x11" width="480" height="270">
+			<p class="description">11X11 Mediana</p>
+        </div>
+		<div class="card">
+            <h2>Exercicio 2</h2>
+			<h2>Filtro Sal e Pimenta</h2>
+			<img class = "center" src="2/Sal e Pimenta/salt_pepper_noise_image.jpg" alt="11x11" width="480" height="270">
+			<p class="description">Filtro Sal e Pimenta</p>
+        </div>
+		<div class="card">
+            <h2>Exercicio 3</h2>
+        </div>
+		<div class="card">
+            <h2>Exercicio 4 - Desafio</h2>
+        </div>
+	<footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
+        <p>&copy; 2024 Grupomon. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
