@@ -209,8 +209,29 @@
     </header>
 	<main class="container">
 		<div class="card">
-			<h1>Relatório 02</h1>
+			<h1>Relatório 02 - Filtragem</h1>
             <h2>Introdução</h2>
+			<p>A filtragem de imagens é uma técnica essencial no processamento digital de imagens, usada para suavizar, reduzir ruído e destacar detalhes importantes. 
+			Este relatório explora as principais técnicas de filtragem, como a média, o filtro Gaussiano, a mediana e o filtro bilateral, todas disponíveis na biblioteca OpenCV. 
+			O uso de diferentes tamanhos de kernel e a aplicação de ruído tipo sal-e-pimenta permitem uma análise comparativa dos resultados. 
+			O objetivo é entender o impacto dessas técnicas no aprimoramento da qualidade visual e utilidade prática das imagens.</p>
+		<h3>Explicando os filtros</h3>
+			<p><b>Filtro de Média (blur):</b>Suaviza a imagem ao calcular a média dos pixels vizinhos dentro de um kernel, suavizando detalhes e reduzindo variações bruscas de intensidade.</p>
+			<p><b>Filtro Gaussiano (GaussianBlur):</b>Aplica uma função Gaussiana para suavizar a imagem, dando maior peso aos pixels centrais no kernel, preservando detalhes melhor do que a média simples.</p>
+			<p><b>Filtro Mediana (medianBlur):</b>Substitui cada pixel pela mediana de seus vizinhos, eficiente para remover ruídos como sal-e-pimenta.</p>
+			<p><b>Filtro Bilateral (bilateralFilter):</b>Suaviza a imagem enquanto preserva as bordas, ao levar em conta a diferença de intensidade entre os pixels vizinhos, 
+				sendo ideal para reduzir ruído sem perder nitidez nas bordas.</p>
+		<h3>O que é o Kernel?</h3>
+			<p>O kernel é uma pequena matriz de números (geralmente quadrada) usada em operações de filtragem de imagens.
+			 Ele percorre a imagem pixel por pixel, aplicando uma transformação com base nos valores da matriz e dos pixels correspondentes na imagem original. 
+			O objetivo do kernel é suavizar, detectar bordas ou aplicar outros efeitos de processamento. 
+			O tamanho do kernel (como 3x3, 5x5, etc.) influencia o grau de suavização ou detalhamento,
+			 com kernels maiores tendendo a produzir maior suavização, mas com potencial perda de detalhes finos.</p>
+		<h3>O ruído sal e pimenta</h3>
+			<p>O ruído sal e pimenta é um tipo de distorção em imagens digitais, onde pixels aleatórios são alterados para valores extremos:
+			 “sal” (branco, valor máximo) e “pimenta” (preto, valor mínimo). Isso resulta em pontos brancos e pretos dispersos na imagem.
+			 Esse tipo de ruído geralmente surge devido a falhas no sensor, transmissões defeituosas ou erros no armazenamento de imagens.
+			 Para remover esse ruído, o filtro mediana é comumente utilizado, pois substitui os pixels ruidosos pelo valor mediano de seus vizinhos, preservando as bordas da imagem.</p>
         </div>
 		<div class="card">
             <h2>Exercicio 1</h2>
