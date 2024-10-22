@@ -234,9 +234,12 @@
 			 Para remover esse ruído, o filtro mediana é comumente utilizado, pois substitui os pixels ruidosos pelo valor mediano de seus vizinhos, preservando as bordas da imagem.</p>
         </div>
 		<div class="card">
-            <h2>Exercicio 1</h2>
-			<p></p>
-			<h2>Filtros 3X3</h2>
+            <h2>Imagens Obtidas</h2>
+			<p>Modificamos o código disponível no seguinte tutorial <a href="https://docs.opencv.org/4.x/dc/dd3/tutorial_gausian_median_blur_bilateral_filter.html"></a> para que ele 
+			pudesse processar a foto dos três membros do grupo.
+			 O programa foi ajustado para ler essa imagen e, em seguida, aplicar quatro diferentes filtros: média, Gaussiano, mediana e bilateral, utilizando inicialmente um kernel 3x3, depois 5x5, 7x7 e então 11x11.
+			 Como resultado, foram geradas quatro imagens filtradas, permitindo a comparação visual dos efeitos de cada técnica de filtragem.</p>
+			<h2>Filtros com kernel 3X3</h2>
 			<p></p>
 			<img class = "center" src="1/Filtros 3x3/imagem_bilateral.jpg" alt="3x3" width="480" height="270">
 			<p class="description">3X3 Bilateral</p>
@@ -276,10 +279,16 @@
 			<p class="description">11X11 Media</p>
 			<img class = "center" src="1/Filtros 11x11/imagem_mediana.jpg" alt="11x11" width="480" height="270">
 			<p class="description">11X11 Mediana</p>
+			<h2>Análise</h2>
+			<p>Na análise das imagens filtradas, observamos que, conforme o tamanho do kernel aumentou (de 3x3 a 11x11), o grau de suavização das imagens também se intensificou.
+			 No kernel 3x3 a suavização é baixa em ambos os filtros que é quase imperceptivel a diferença entre as imagens obtidas. 
+			 No filtro de média, houve uma crescente perda de detalhes, principalmente nas bordas. O filtro Gaussiano apresentou suavização progressiva, mas manteve melhor definição nas bordas.
+			 No filtro mediana, observamos uma suavização dos detalhes em kernels maiores. Já o filtro bilateral preservou bem as bordas, mesmo com kernels grandes, ao suavizar regiões internas.
+			</p>
         </div>
 		<div class="card">
-            <h2>Exercicio 2</h2>
-			<h2>Filtro Sal e Pimenta</h2>
+            <h2>Ruído Sal e Pimenta</h2>
+			<p>A foto do grupo recebeu o tratamento do ruído sal e pimenta conforme a imagem abaixo:</p>
 			<img class = "center" src="2/Sal e Pimenta/salt_pepper_noise_image.jpg" alt="Sal e Pimenta" width="480" height="270">
 			<p class="description">Filtro Sal e Pimenta</p>
         </div>
@@ -289,7 +298,7 @@
 			<p class="description">Imagem da Webcam com filtro</p>
         </div>
 		<div class="card">
-            <h2>Exercicio 4 - Desafio</h2>
+            <h2>Programa de Filtragem</h2>
         </div>
 	<footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
         <p>&copy; 2024 Grupomon. Todos os direitos reservados.</p>
