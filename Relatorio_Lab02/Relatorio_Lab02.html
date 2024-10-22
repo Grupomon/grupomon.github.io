@@ -307,31 +307,59 @@
 		<div class="card">
             <h2>Webcam com filtro</h2>
 			<p>O código foi alterado para que o filtro Gaussiano fosse aplicado na webcam e que ao clicar na tecla [S] salvasse uma foto.</p>
+			<p>Arquivo: webcam.cpp</p>
 				<div class="code-box">
 					<pre><code>
-	// Arquivo: webcam.cpp
-
 	#include <opencv2/opencv.hpp>
-	#include <iostream>
+#include <iostream>
 
-	int main() {
-   		cv::VideoCapture cap(0); // Abre a câmera padrão
-    		if(!cap.isOpened()) {
-        		std::cerr << "Erro ao abrir a webcam!" << std::endl;
-        		return -1;
-    	}
+using namespace std;
+using namespace cv;
 
-    		cv::Mat frame;
-    		while(true) {
-        		cap >> frame; // Captura um novo frame
-        		if (frame.empty()) break; // Verifica se o frame está vazio
+int main() {
+    // Inicializa a captura da webcam
+    VideoCapture cap(0); // 0 é o ID da webcam padrão
+    if (!cap.isOpened()) {
+        cerr << "Erro ao abrir a webcam!" << endl;
+        return -1;
+    }
 
-        		cv::imshow("Webcam", frame); // Mostra o frame na janela
-        		if (cv::waitKey(30) >= 0) break; // Espera 30ms ou tecla pressionada
-    		}
+    Mat frame, filtered_frame;
+    char key;
 
-    		return 0;
-	}
+    while (true) {
+        // Captura um novo quadro da webcam
+        cap >> frame;
+
+        // Verifica se o quadro foi capturado
+        if (frame.empty()) {
+            cerr << "Erro ao capturar imagem da webcam!" << endl;
+            break;
+        }
+
+        // Aplica o filtro gaussiano
+        GaussianBlur(frame, filtered_frame, Size(11, 11), 0);
+
+        // Exibe a imagem filtrada
+        imshow("Filtro Gaussiano - Webcam", filtered_frame);
+
+        // Espera pela tecla 's' para salvar a imagem ou 'q' para sair
+        key = waitKey(30);
+        if (key == 's') {
+            imwrite("imagem_filtrada.jpg", filtered_frame);
+            cout << "Imagem salva como 'imagem_filtrada.jpg'" << endl;
+        }
+        if (key == 'q') {
+            break; // Sai do loop se a tecla 'q' for pressionada
+        }
+    }
+
+    // Libera a captura e fecha as janelas
+    cap.release();
+    destroyAllWindows();
+
+    return 0;
+}
         		</code></pre>
     		</div>
 			<img class = "center" src="3/imagem_filtrada.jpg" alt="Webcam filtro" width="480" height="270">
