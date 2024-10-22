@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial - Equipe</title>
-    <!-- Estilos Modernos com CSS Flexbox e Menus Suspensos -->
+   
     <style>
-        /* Reset básico para margens e padding */
+        
         * {
             margin: 0;
             padding: 0;
@@ -20,13 +20,13 @@
             line-height: 1.6;
         }
 		img {
-			max-width: 100%; /* A imagem se ajusta ao tamanho da tela */
-			height: auto;    /* Mantém a proporção correta da imagem */
+			max-width: 100%; 
+			height: auto;    
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
     	}
-        /* Estilo do Header com Navegação */
+        
         header {
             background-color: #2c3e50;
             color: #fff;
@@ -43,7 +43,7 @@
             overflow: hidden;
         }
 
-        /* Navegação */
+        
         nav {
             display: flex;
             justify-content: space-between;
@@ -74,7 +74,7 @@
         nav ul li a:hover {
             background-color: #34495e;
         }
-	    /* Dropdown Menu */
+	 
         nav ul li:hover .dropdown {
             display: block;
         }
@@ -97,7 +97,7 @@
             background-color: #3d566e;
         }
 
-        /* Estilo do Conteúdo Principal */
+     
         main {
             padding: 20px 0;
         }
@@ -139,7 +139,7 @@
             text-decoration: underline;
         }
 
-        /* Responsividade */
+       
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -161,13 +161,25 @@
             }
         }
 
-        /* Menu Toggle (para dispositivos móveis) */
+        
         .menu-toggle {
             display: none;
             color: #fff;
         }
+	    .code-box {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .code-box code {
+            color: #d63384; 
+        }
     </style>
-    <!-- Ícone para menu móvel -->
+    
     <script>
         function toggleMenu() {
             const navUl = document.getElementById('nav-ul');
@@ -293,9 +305,38 @@
 			<p class="description">Filtro Sal e Pimenta</p>
         </div>
 		<div class="card">
-            <h2>Exercicio 3</h2>
+            <h2>Webcam com filtro</h2>
+			<p>O código foi alterado para que o filtro Gaussiano fosse aplicado na webcam e que ao clicar na tecla [S] salvasse uma foto.</p>
+				<div class="code-box">
+					<pre><code>
+	// Arquivo: webcam.cpp
+
+	#include <opencv2/opencv.hpp>
+	#include <iostream>
+
+	int main() {
+   		cv::VideoCapture cap(0); // Abre a câmera padrão
+    		if(!cap.isOpened()) {
+        		std::cerr << "Erro ao abrir a webcam!" << std::endl;
+        		return -1;
+    	}
+
+    		cv::Mat frame;
+    		while(true) {
+        		cap >> frame; // Captura um novo frame
+        		if (frame.empty()) break; // Verifica se o frame está vazio
+
+        		cv::imshow("Webcam", frame); // Mostra o frame na janela
+        		if (cv::waitKey(30) >= 0) break; // Espera 30ms ou tecla pressionada
+    		}
+
+    		return 0;
+	}
+        		</code></pre>
+    		</div>
 			<img class = "center" src="3/imagem_filtrada.jpg" alt="Webcam filtro" width="480" height="270">
 			<p class="description">Imagem da Webcam com filtro</p>
+			
         </div>
 		<div class="card">
             <h2>Programa de Filtragem</h2>
