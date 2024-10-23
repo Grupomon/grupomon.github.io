@@ -337,9 +337,9 @@
 			<p class="description">11X11 Mediana</p>
 			<h2>Análise</h2>
 			<p>Podemos destacar a diferença entre as imagens com ruído sal e pimenta e as tratadas com filtros de suavização. 
-			O ruído sal e pimenta consiste em pixels pretos e brancos aleatórios, que distorcem a imagem. 
-			O filtro de mediana se mostrou o mais eficaz, removendo o ruído enquanto preserva os contornos da imagem. 
+			O filtro de mediana se mostrou o mais eficaz, removendo o ruído enquanto preserva os contornos da imagem de forma eficiente até o kernel 7x7, perdendo detalhes no kernel 11x11. 
 			Já o filtro gaussiano, embora suavize a imagem, não foi tão eficiente na eliminação específica do ruído sal e pimenta, resultando em maior perda de detalhes.
+			O filtro bilateral foi o que se mostrou mais ineficiente em remover o ruído sal e pimenta.
 			</p>
         </div>
 		<div class="card">
