@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Relatorio_Lab2/2/Sal e Pimenta/Filtros 5x5/CMakeFiles/Smoothing.dir
+/home/ufabc/Documentos/gabrielcv/Relatorio_Lab2/2/Sal e Pimenta/Filtros 5x5/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Relatorio_Lab2/2/Sal e Pimenta/Filtros 5x5/CMakeFiles/rebuild_cache.dir
