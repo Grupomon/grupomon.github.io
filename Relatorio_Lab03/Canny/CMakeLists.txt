@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Canny_Gaussian_Threshold_inRange )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Canny_Gaussian_Threshold_inRange Canny_Gaussian_Threshold_inRange.cpp )
+target_link_libraries( Canny_Gaussian_Threshold_inRange ${OpenCV_LIBS} )
