@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Lab_3/Canny record/CMakeFiles/R_Canny_Gaussian_Threshold_inRange.dir
+/home/ufabc/Documentos/gabrielcv/Lab_3/Canny record/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Lab_3/Canny record/CMakeFiles/rebuild_cache.dir
