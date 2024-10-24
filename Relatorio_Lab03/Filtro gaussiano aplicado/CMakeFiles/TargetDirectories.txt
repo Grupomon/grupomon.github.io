@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Lab_3/Filtro gaussiano aplicado/CMakeFiles/Gaussian_Threshold_inRange.dir
+/home/ufabc/Documentos/gabrielcv/Lab_3/Filtro gaussiano aplicado/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Lab_3/Filtro gaussiano aplicado/CMakeFiles/rebuild_cache.dir

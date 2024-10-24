@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Gaussian_Threshold_inRange )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Gaussian_Threshold_inRange Gaussian_Threshold_inRange.cpp )
+target_link_libraries( Gaussian_Threshold_inRange ${OpenCV_LIBS} )
