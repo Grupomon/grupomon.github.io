@@ -355,7 +355,7 @@ int main(int argc, char* argv[])
 				na última etapa, aplica-se a limiarização dupla para realçar bordas com intensidade forte e conectar as fracas adjacentes.
 			</p>
 			<p>No código abaixo, foi adicionada a aplicação do detector de bordas de Canny para destacar os contornos de objetos no vídeo.</p>
-			<p>Arquivo: webcam.cpp</p>
+			<p>Arquivo: Canny_Gaussian_Threshold_inRange.cpp</p>
 				<div class="code-box">
 					<pre><code>
 #include "opencv2/imgproc.hpp"
@@ -439,6 +439,115 @@ int main(int argc, char** argv)
 		</div>
 		<div class="card">
 			<h2>Imagens e Videos</h2>
+			<p> programa permite salvar uma imagem processada ao pressionar 's' e gravar um vídeo dos frames processados ao pressionar 'k' para iniciar e 'h' para parar a gravação.</p>
+			<p>Arquivo: R_Canny_Gaussian_Threshold_inRange.cpp</p>
+				<div class="code-box">
+					<pre><code>
+#include "opencv2/imgproc.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/videoio.hpp"
+#include <iostream>
+
+using namespace cv;
+
+Mat frame, frame_gray;
+Mat dst, detected_edges;
+
+int lowThreshold = 0;
+const int max_lowThreshold = 100;
+const int ratio = 3;
+const int kernel_size = 3;
+const char* window_name = "Canny Edge Map";
+
+VideoWriter videoWriter; // Para gravar o vídeo
+bool isRecording = false; // Flag para controle de gravação
+
+// Função para aplicar o detector Canny
+static void CannyThreshold(int, void*)
+{
+    // Converter a imagem para escala de cinza
+    cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
+    blur(frame_gray, detected_edges, Size(3, 3));
+    Canny(detected_edges, detected_edges, lowThreshold, lowThreshold * ratio, kernel_size);
+    dst = Scalar::all(0);
+    frame.copyTo(dst, detected_edges);
+    imshow(window_name, dst);
+}
+
+int main(int argc, char** argv)
+{
+    VideoCapture cap(0); // Captura de vídeo da webcam
+    if (!cap.isOpened())
+    {
+        std::cerr << "Error: Cannot open the webcam!" << std::endl;
+        return -1;
+    }
+
+    namedWindow(window_name, WINDOW_AUTOSIZE);
+    
+    // Criar trackbar para ajustar o limiar
+    createTrackbar("Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold);
+
+    while (true)
+    {
+        cap >> frame; // Captura um frame da webcam
+        if (frame.empty())
+            break;
+
+        // Chamar a função Canny para processar a imagem
+        CannyThreshold(0, 0);
+
+        // Exibir a imagem com bordas detectadas
+        imshow("Original", frame);
+        imshow(window_name, dst);
+
+        // Salvar a imagem ao pressionar 's'
+        char key = (char)waitKey(30);
+        if (key == 's') // Salvar imagem
+        {
+            imwrite("canny_image.png", dst); // Salvar a imagem processada pelo Canny
+            std::cout << "Image saved as 'canny_image.png'" << std::endl;
+        }
+        else if (key == 'k') // Iniciar gravação de vídeo
+        {
+            if (!isRecording)
+            {
+                videoWriter.open("output_canny.avi", VideoWriter::fourcc('M','J','P','G'), 10, frame.size());
+                if (!videoWriter.isOpened())
+                {
+                    std::cerr << "Error: Could not open the video writer!" << std::endl;
+                    return -1;
+                }
+                isRecording = true;
+                std::cout << "Recording started..." << std::endl;
+            }
+        }
+        else if (key == 'h') // Parar gravação de vídeo
+        {
+            if (isRecording)
+            {
+                videoWriter.release();
+                isRecording = false;
+                std::cout << "Recording stopped." << std::endl;
+            }
+        }
+
+        // Gravar o frame se estiver gravando
+        if (isRecording)
+        {
+            videoWriter.write(dst); // Gravar a imagem processada pelo Canny
+        }
+    }
+
+    cap.release(); // Liberar a captura de vídeo
+    videoWriter.release(); // Liberar o gravador de vídeo se estiver aberto
+    destroyAllWindows(); // Fechar todas as janelas
+
+    return 0;
+}      		
+
+			</code></pre>
+    		</div>
 		</div>
 	<footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
         <p>&copy; 2024 Grupomon. Todos os direitos reservados.</p>
