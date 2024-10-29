@@ -342,11 +342,100 @@ int main(int argc, char* argv[])
         		</code></pre>
     		</div>
 		</div>
-		<div class="card">
-			<h2>Aplicação de filtro no programa</h2>
-		</div>
+		
 		<div class="card">
 			<h2>Detector Canny</h2>
+			<p>O detector de bordas de Canny é uma técnica de detecção de bordas desenvolvida para identificar mudanças de intensidade em imagens,
+				destacando contornos de objetos. Ele trabalha em quatro etapas: suavização, cálculo de gradiente,
+				supressão de não-máximos e limiarização dupla com rastreamento de bordas.
+			</p>
+
+			<p>Primeiro, a imagem é suavizada para reduzir ruídos, depois os gradientes são calculados para detectar mudanças de intensidade.
+				Com a supressão de não-máximos, retêm-se apenas os pontos com maior intensidade de borda, e,
+				na última etapa, aplica-se a limiarização dupla para realçar bordas com intensidade forte e conectar as fracas adjacentes.
+			</p>
+			<p>No código abaixo, foi adicionada a aplicação do detector de bordas de Canny para destacar os contornos de objetos no vídeo.</p>
+			<p>Arquivo: webcam.cpp</p>
+				<div class="code-box">
+					<pre><code>
+#include "opencv2/imgproc.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/videoio.hpp"
+#include <iostream>
+
+using namespace cv;
+
+Mat frame, frame_gray;
+Mat dst, detected_edges;
+Mat filtered_image;
+
+int lowThreshold = 0;
+const int max_lowThreshold = 100;
+const int ratio = 3;
+const int kernel_size = 3;
+const char* window_name = "Canny Edge Map";
+const char* window_filtered_name = "Filtered Image";
+
+// Função para aplicar o detector Canny
+static void CannyThreshold(int, void*)
+{
+    blur(frame_gray, detected_edges, Size(3, 3));
+    Canny(detected_edges, detected_edges, lowThreshold, lowThreshold * ratio, kernel_size);
+    dst = Scalar::all(0);
+    frame.copyTo(dst, detected_edges);
+    imshow(window_name, dst);
+}
+
+int main(int argc, char** argv)
+{
+    VideoCapture cap(0); // Captura de vídeo da webcam
+    if (!cap.isOpened())
+    {
+        std::cerr << "Error: Cannot open the webcam!" << std::endl;
+        return -1;
+    }
+
+    namedWindow(window_name, WINDOW_AUTOSIZE);
+    namedWindow(window_filtered_name, WINDOW_AUTOSIZE);
+
+    // Criar trackbar para ajustar o limiar
+    createTrackbar("Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold);
+
+    while (true)
+    {
+        cap >> frame; // Captura um frame da webcam
+        if (frame.empty())
+            break;
+
+        // Converter a imagem para escala de cinza
+        cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
+
+        // Exemplo de filtragem: aplicar um desfoque gaussiano
+        GaussianBlur(frame, filtered_image, Size(15, 15), 0);
+
+        // Chamar a função Canny pela primeira vez
+        CannyThreshold(0, 0);
+
+        // Exibir a imagem filtrada
+        imshow(window_filtered_name, filtered_image);
+
+        // Mostrar a imagem original (opcional)
+        imshow("Original", frame);
+
+        // Esperar por uma tecla
+        char key = (char)waitKey(30);
+        if (key == 'q' || key == 27) // Sair se 'q' ou 'Esc' for pressionado
+            break;
+    }
+
+    cap.release(); // Liberar a captura de vídeo
+    destroyAllWindows(); // Fechar todas as janelas
+
+    return 0;
+}        		
+
+			</code></pre>
+    		</div>
 		</div>
 		<div class="card">
 			<h2>Imagens e Videos</h2>
