@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/marlonbns/Lab4/Histograma/CMakeFiles/calcHist_Demo.dir
+/home/ufabc/Documentos/marlonbns/Lab4/Histograma/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/marlonbns/Lab4/Histograma/CMakeFiles/rebuild_cache.dir
