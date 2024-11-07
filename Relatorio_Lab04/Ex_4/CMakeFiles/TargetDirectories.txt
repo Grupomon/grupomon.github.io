@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Lab_4/Ex_4/CMakeFiles/RGB_Binariza_Equalize_Calc_Hist.dir
+/home/ufabc/Documentos/gabrielcv/Lab_4/Ex_4/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Lab_4/Ex_4/CMakeFiles/rebuild_cache.dir
