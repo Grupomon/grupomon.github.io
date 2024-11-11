@@ -305,9 +305,27 @@
 		</div>
 		<div class="card">
 			<h2>Binarização/Limiarização</h2>
+			<p>A limiarização é uma técnica de processamento de imagem que separa pixels em diferentes categorias com base em um valor de intensidade,
+			 chamado de limiar. Na binarização, um caso específico de limiarização,
+			 os pixels são convertidos para apenas dois valores (normalmente preto e branco):
+			 pixels com intensidade acima do limiar ficam brancos, e abaixo, ficam pretos.</p>
+			<p>Na imagem obtida pela webcam, ao binarizar, a maioria dos pixels ficaram abaixo do limiar, deixando a imagem praticamente preta, e o histograma por consequencia teve apenas um único pico.</p>
+			<img class = "center" src="Ex_3/gab_original.png" alt="3x3" width="480" height="270">
+			<p class="description">Foto original</p>
+			<img class = "center" src="Ex_3/gab_equalizada.png" alt="3x3" width="480" height="270">
+			<p class="description">Foto equalizada</p>
+			<img class = "center" src="Ex_3/gab_binarizada.png" alt="3x3" width="480" height="270">
+			<p class="description">Foto binarizada</p>
+			<img class = "center" src="Ex_3/histograma_imagem.png" alt="3x3" width="480" height="270">
+			<p class="description">Histograma da foto binarizada</p>
 		</div>
 		<div class="card">
 			<h2>Equalização com Cores</h2>
+			<p>Neste experimento, aplicamos a equalização de histograma diretamente na imagem colorida sem convertê-la para tons de cinza.
+			 Para isso, separamos a imagem nos três canais de cor (vermelho, verde e azul) e equalizamos o histograma de cada canal individualmente.
+			 Em seguida, reunimos os canais equalizados para formar a imagem final.
+			 Esse processo realça o contraste em cada cor separadamente, preservando a vivacidade e melhorando a distinção das cores originais,
+			 o que resulta em uma imagem com cores mais equilibradas e mais detalhes visíveis em cada canal.</p>
 		</div>
 	</main>
 	<footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
