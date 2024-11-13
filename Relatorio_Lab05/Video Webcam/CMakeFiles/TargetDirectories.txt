@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/Labs/Lab_5/Video Webcam/CMakeFiles/bg_sub_webcam.dir
+/home/ufabc/Documentos/gabrielcv/Labs/Lab_5/Video Webcam/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/Labs/Lab_5/Video Webcam/CMakeFiles/rebuild_cache.dir
