@@ -232,15 +232,16 @@
 				Quando um novo quadro é capturado, ele é comparado com o modelo de fundo,
 				e as diferenças significativas são classificadas como objetos em movimento.
 			</p>
-			<dl>
-  				<dt>MOG2 (Mixture of Gaussians)</dt>
-  				<dd>Um modelo probabilístico que utiliza uma mistura de distribuições gaussianas para modelar cada pixel da cena.
-					Ele é adaptativo e pode lidar com mudanças sutis no fundo, como iluminação variável.</dd>
-
-  				<dt>KNN (K-Nearest Neighbors)</dt>
-  				<dd>Um método baseado em aprendizado que classifica os pixels como fundo ou primeiro plano com base nos vizinhos mais próximos.
-					É robusto contra ruídos e sombras.</dd>
-			</dl>
+			<ul>
+        			<li>
+            				<strong>MOG2 (Mixture of Gaussians):</strong> 
+            				Um modelo probabilístico que utiliza uma mistura de distribuições gaussianas para modelar cada pixel da cena. Ele é adaptativo e pode lidar com mudanças sutis no fundo, como iluminação variável.
+        			</li>
+        			<li>
+            				<strong>KNN (K-Nearest Neighbors):</strong> 
+            				Um método baseado em aprendizado que classifica os pixels como fundo ou primeiro plano com base nos vizinhos mais próximos. É robusto contra ruídos e sombras.
+        			</li>
+    			</ul>
 		</div>
 		<div class="card">
 			<h2>Subtração do fundo de videos com movimentos rapidos e lentos</h2>
