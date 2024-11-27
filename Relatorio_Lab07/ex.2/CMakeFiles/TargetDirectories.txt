@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/marlonbns/Lab7/ex.2/CMakeFiles/objectDetection.dir
+/home/ufabc/Documentos/marlonbns/Lab7/ex.2/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/marlonbns/Lab7/ex.2/CMakeFiles/rebuild_cache.dir
