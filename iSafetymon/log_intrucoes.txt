@@ -1,0 +1,5 @@
+Movimento detectado: primeiro movimento no campo de visao.
+Alerta de movimento: presenca detectada por mais de 15 segundos de perto.
+Alerta de possivel intruso: presenca detectada por mais de 1 minuto de perto.
+Perigo! Intruso detectado por mais de 2 minutos de perto.
+Gravacao de video do intruso finalizada apos 1 minuto.
