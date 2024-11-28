@@ -220,15 +220,53 @@
 		<div class="card">
 			<h1>Relatório 07 - Detecção de Objetos</h1>
 			<h2>Introdução</h2>
+			<p>Este relatório aborda o processo de detecção facial e ocular em imagens utilizando o algoritmo Haar Cascade, 
+			implementado com a biblioteca OpenCV. A abordagem baseia-se em identificar rostos e olhos em imagens pré-carregadas e vídeos capturados pela webcam. 
+			Duas imagens processadas foram analisadas, além do código utilizado para o reconhecimento, demonstrando os resultados obtidos.</p>
 		</div>
 		<div class="card">
 			<h2>Detecção de Rosto - Imagens de Pessoas</h2>
-		</div>
-		<div class="card">
-			<h2>Detecção de Rosto - Imagens de Avatares</h2>
-		</div>
+			<p>As imagens fornecidas foram processadas usando o algoritmo Haar Cascade. 
+			Este método utiliza classificadores treinados para identificar características faciais, como contornos de rostos e olhos.</p>
+			<h3>Descrição do código</h3>
+			<ul>
+				<li>
+					O código processa imagens através da conversão para escala de cinza e aplicação de equalização de histograma para melhorar a qualidade do contraste.
+				</li>
+				<li>
+					Os classificadores Haar Cascade "haarcascade_frontalface_default.xml" e "haarcascade_eye_tree_eyeglasses.xml" são carregados para identificar rostos e olhos, respectivamente.
+				</li>
+				<li>
+					Cada rosto detectado é destacado por uma elipse rosa, enquanto os olhos são circulados em azul.
+				</li>
+			</ul>
+			<h3>Resultados</h3>
+			<img class = "center" src="ex.1/kelvin_detected.jpg" alt="3x3" width="480" height="270">
+			<p class="description">Detecção do rosto do Kelvin</p>
+			<img class = "center" src="ex.1/marlon_detected.jpg" alt="3x3" width="480" height="270">
+			<p class="description">Detecção do rosto do Marlon</p>
+			<img class = "center" src="ex.1/gabriel_detected.jpg" alt="3x3" width="480" height="270">
+			<p class="description">Detecção do rosto do Kelvin</p>
+			<p>Os rostos foram identificados e destacados por uma elipse rosa, enquanto os olhos foram detectados corretamente e destacados por círculos azuis.</p>
+			<p>As detecções demonstram boa precisão e adequação ao cenário, com os elementos destacados nitidamente.</p>
+	
 		<div class="card">
 			<h2>Detecção de Rosto - Por webcam</h2>
+			<p>O código foi projetado para ser adaptável a uma entrada de vídeo em tempo real, como uma webcam. Esse recurso oferece:</p>
+			<ul>
+				<li>
+					Identificação em tempo real de rostos e olhos, útil para aplicações interativas como reconhecimento facial.
+				</li>
+				<li>
+					Exibição imediata dos resultados processados.
+				</li>
+				<li>
+					A possibilidade de salvar os frames processados como imagens, caso necessário.
+				</li>
+			</ul>
+			<img class = "center" src="ex.2/output_detected.jpg" alt="3x3" width="480" height="270">
+			<p class="description">Imagem obtida da webcam</p>
+			<p>A captura obtida da webcam evidencia bem o elipse rosa e os círculos azuis capturados em tempo real na webcam.</p>
 		</div>
 	</main>
 	<footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
