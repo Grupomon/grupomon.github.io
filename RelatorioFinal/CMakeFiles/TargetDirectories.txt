@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/gabrielcv/iSafetymon/CMakeFiles/iSafetymon.dir
+/home/ufabc/Documentos/gabrielcv/iSafetymon/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/gabrielcv/iSafetymon/CMakeFiles/rebuild_cache.dir
