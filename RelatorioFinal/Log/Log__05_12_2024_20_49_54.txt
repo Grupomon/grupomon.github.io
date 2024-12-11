@@ -1,0 +1,9 @@
+20:46:52 | Movimento detectado: primeiro movimento no campo de visao.
+20:47:07 | Alerta de movimento: presenca detectada + de 15 segundos de longe.
+20:47:40 | Nao precisa se preocupar.
+20:47:42 | Movimento detectado: primeiro movimento no campo de visao.
+20:47:57 | Alerta de movimento: presenca detectada + de 15 segundos de perto.
+20:48:42 | Possivel intruso: presenca detectada por + de 1 minuto de perto.
+20:48:42 | Gravacao iniciada de perto.
+20:49:42 | Perigo! Intruso detectado por mais de 2 minutos de perto.
+20:49:43 | Gravacao de video do intruso realizada.
