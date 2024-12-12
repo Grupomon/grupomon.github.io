@@ -15,17 +15,109 @@ todas as mensagens e avisos em um Log de facil leitura onde uma pessoa pode chec
   Com tudo isso em mente, esperasse que esse aplicativo seja essencial para uma pessoa que está pensando em adotar um sistema de vigilancia e segurança, demonstrando um uso basico e de facil acesso
 a uma camera que registre tudo o que vê sem precisar de equipamentos com preços altos e de uso complexo.
 
+Materiais e Métodos
 Modelagem Funcional do SPV (MF)
+O Sistema de Processamento de Visão (SPV) iSafetymon foi modelado para detectar movimento e gerar alertas de segurança em tempo real. A modelagem funcional inclui:
+*Detecção de Movimento: Utiliza subtração de fundo para identificar mudanças significativas no campo de visão da câmera.
+*Geração de Alertas: Emite alertas em intervalos predefinidos (15 segundos, 1 minuto, e 2 minutos) para indicar a presença e o nível de risco associado ao movimento detectado.
+*Captura de Imagens e Vídeos: Tira fotos após 15 segundos de presença contínua e inicia a gravação de vídeo após 1 minuto.
 
-Implementação do Sistema de Processamento da Visão (SPV)
+Descrição da Implementação do SPV
+A implementação do iSafetymon é feita em C++ utilizando a biblioteca OpenCV para processamento de imagem. O sistema captura frames da câmera, aplica subtração de fundo para detectar movimento, e utiliza contornos para determinar a área do movimento. Dependendo do tempo que o movimento é detectado, o sistema aciona diferentes níveis de alerta e inicia a captura de imagens ou vídeos. Principais Componentes:
+*Subtração de Fundo: Implementada com cv::createBackgroundSubtractorMOG2().
+*Captura de Foto: Utiliza cv::imwrite() para salvar imagens quando um movimento é detectado por mais de 15 segundos.
+*Gravação de Vídeo: Iniciada com cv::VideoWriter após 1 minuto de detecção contínua.
 
-Arquivos
+Lista dos Arquivos
+Código-fonte:
+iSafetymon.cpp: Contém a lógica completa do sistema, incluindo detecção, alertas, e captura.
+
+Imagens e Vídeos:
+Diretório Captura_foto: Armazena fotos capturadas durante testes.
+Diretório Captura_video: Armazena vídeos gravados quando presença contínua é detectada.
+
+Arquivos Auxiliares:
+Diretório Log: Contém arquivos .txt com logs detalhados das atividades do sistema.
 
 Análise Técnica
+O iSafetymon foi avaliado em termos de sua eficácia no contexto escolhido, que é a detecção precisa e oportuna de movimentos em uma área monitorada. Métricas Objetivas:
+*Precisão na Detecção: Todos os grupos participantes relataram que o sistema detectou movimentos corretamente, sem falsos positivos ou negativos significativos.
+*Conformidade dos Alertas: Os alertas foram acionados conforme esperado nos tempos especificados (15s, 1m, 2m), indicando alta precisão temporal.
 
-Roteiro do Laboratório Experimental
+Métricas Qualitativas:
+*Facilidade de Uso: Avaliada com nota média 5/5, indicando que o sistema é intuitivo.
+*Satisfação Geral: Recebeu notas altas (10/10) na maioria das avaliações, refletindo alta satisfação dos usuários.
 
-Análise dos Resultados do Teste de Campo
+Roteiro do Laboratório Experimental para o Sistema iSafetymon
+
+Introdução
+O sistema iSafetymon é um software de monitoramento que utiliza uma câmera para detectar movimentos e gerar alertas de segurança. Ele opera através de duas principais interfaces: uma janela de monitoramento e outra de detecção de movimento. O usuário interage com o sistema principalmente visualizando estas janelas e respondendo aos alertas gerados. O sistema é projetado para ser intuitivo, permitindo que usuários leigos possam operá-lo facilmente. 
+Funcionalidades Principais:
+*Detecção de Movimento: O sistema detecta movimento usando subtração de fundo e emite alertas dependendo da duração da presença detectada.
+*Captura de Imagem e Vídeo: Quando um movimento é detectado por mais de 15 segundos, o sistema captura uma foto. Se a presença continuar por mais de 1 minuto, inicia a gravação de vídeo.
+*Alertas Temporizados: Alertas são emitidos em intervalos específicos (15 segundos, 1 minuto, e 2 minutos) para indicar diferentes níveis de risco.
+
+Procedimento Experimental
+Passo a Passo para Execução do Sistema:
+Iniciar o Programa:
+Abra o programa iSafetymon com um duplo clique no ícone correspondente.
+Verifique se duas janelas são exibidas: uma mostrando a imagem da câmera e outra a subtração de fundo.
+Simulação de Cenários:
+Cenário 1: Saia do campo de visão da câmera por 10 segundos. Verifique se a mensagem "não se preocupe" aparece.
+Cenário 2: Retorne ao campo de visão e permaneça por 1 minuto. Confirme se o alerta "possível intruso" é exibido.
+Cenário 3: Continue no campo por mais 1 minuto até que o alerta "Perigo! Intruso detectado por mais de 2 minutos" apareça.
+Verificação de Captura:
+Após os testes, acesse as pastas "Log", "Video" e "Foto" no diretório do programa.
+Confirme se as fotos e vídeos foram gravados corretamente.
+Encerrar o Programa:
+Feche o programa pressionando a tecla 'Q' ou 'ESC'.
+Resultados Esperados:
+Mensagens claras na interface indicando a detecção ou ausência de movimento.
+Fotos capturadas após 15 segundos de presença contínua.
+Vídeos gravados após 1 minuto de detecção contínua.
+
+Questionário
+Após realizar os experimentos, responda às seguintes perguntas:
+Foi fácil iniciar e operar o sistema? (Escala de 1 a 5)
+O sistema detectou movimentos corretamente durante o teste? (Sim/Não)
+Houve algum falso positivo ou negativo durante a detecção? (Sim/Não)
+Os alertas foram acionados conforme esperado nos tempos especificados? (Sim/Não)
+Os alertas foram claros e fáceis de entender? (Escala de 1 a 5)
+A função de captura de foto funcionou corretamente após detectar movimento por mais de 15 segundos? (Sim/Não)
+A gravação de vídeo iniciou e parou conforme esperado após 1 minuto? (Sim/Não)
+Qual é sua satisfação geral com o sistema iSafetymon? (Escala de 1 a 5)
+Quais melhorias você sugeriria para aumentar a eficácia ou usabilidade do sistema?
+Este roteiro fornece um guia detalhado para testar e avaliar o sistema iSafetymon, garantindo que todas as funcionalidades sejam verificadas adequadamente.
+
+Análise dos Resultados do Teste de Campo (TC) do Sistema iSafetymon
+
+Grupos Participantes
+
+Os testes de campo do sistema iSafetymon foram realizados com a participação dos seguintes grupos:
+Grupo 2: RenderRangers
+Grupo 4: VGA
+Grupo 9: Squad Squirtle
+Grupo 7: UFABC REC
+Grupo 6: Triângulo
+
+Resultados dos Experimentos
+Os experimentos foram conduzidos com base em critérios específicos de avaliação, e os resultados foram organizados da seguinte forma: 
+
+*Facilidade de Uso: A maioria dos participantes avaliou a facilidade de iniciar e operar o sistema com nota 5 em uma escala de 1 a 5, indicando alta usabilidade.
+*Detecção de Movimento: Todos os grupos relataram que o sistema detectou movimentos corretamente, sem ocorrência de falsos positivos ou negativos significativos.
+*Precisão dos Alertas: Os alertas foram acionados conforme esperado nos tempos de 15 segundos, 1 minuto e 2 minutos. Os participantes consideraram os alertas claros e fáceis de entender, com uma média de nota 5 para clareza.
+*Captura de Imagem e Vídeo: A função de captura de foto funcionou corretamente após a detecção de movimento por mais de 15 segundos, e a gravação de vídeo iniciou e parou conforme esperado após 1 minuto de detecção contínua.
+
+Análise das Médias dos Alunos
+A média das notas atribuídas pelos alunos ao sistema foi alta, todos conseguiram realizar todas as etapas do procedimento. Isso reflete uma alta satisfação geral com o desempenho do sistema durante os testes.
+
+Opiniões Subjetivas
+As opiniões subjetivas dos participantes destacaram alguns aspectos importantes:
+*Resolução da Webcam: Um participante sugeriu que o ajuste do DPI poderia melhorar a detecção devido à baixa resolução da webcam utilizada.
+*Velocidade das Mensagens: Outro feedback mencionou que as mensagens poderiam ser exibidas mais rapidamente para melhorar a experiência do usuário.
+*Satisfação Geral: Os comentários gerais foram positivos, com vários participantes elogiando o projeto como excelente.
+Em resumo, o teste de campo do iSafetymon demonstrou que o sistema é eficaz na detecção e alerta sobre movimentos, além de ser bem recebido pelos usuários em termos de facilidade de uso e clareza dos alertas. As sugestões fornecidas podem ser consideradas para futuras melhorias no sistema.
+
 
 Conclusões
 
