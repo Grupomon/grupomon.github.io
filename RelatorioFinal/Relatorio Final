@@ -1,6 +1,19 @@
 Cenario de Aplicação
 
-Fundação Teorica
+Fundação Teorica:
+
+  Segurança privada é um aspecto da vida que está crescendo nos ultimos anos, com grandes projetos de varias cidades para melhorar a vigilancia ao redor de bairros, e as instituições privadas tambem
+vem crescendo, de acordo com um estudo feito pelo FENAVIST, as empresas de segurança privada tiveram um aumento de 5,7% nos anos de 2014 para 2018, e com isso surge um interesse para um sistema de
+vigilancia e proteção pessoal para pessoas comuns, porem, a falta de acessibilidade (preços e complexidade de aplicação) para esses tipos de equipamentos impede que esse interesse evolua alem de um
+leve interesse.
+  Após as pesquisas feitas pelo grupo e essa reflexão, ficou claro que um sistema de vigilancia acessivel é uma necessidade importante para a pessoa comum poder usar, o objetivo do projeto será criar
+uma programa leve, automatizado e de facil uso onde qualquer aparelho computacional poderia ser utilizado, para isso foi escolhido a linguagem C++ por ser uma de facil acesso e conseguir alta 
+perfomance em computadores sem consumir muito processamento.
+  O programa ira se focar na detecção de movimento, já que esta foi julgada como um dos aspectos essenciais para um sistema de vigilancia, o programa poderá detectar se um objeto em movimento está
+perto ou longe, tirar fotos caso um certo objeto/pessoa ficar mum certo tempo na area de gravação, gravar um video depois de um certo objeto/pessoa ficar muito tempo na area de gravação e registrar
+todas as mensagens e avisos em um Log de facil leitura onde uma pessoa pode checar os horarios dos avisos e qual tipo de aviso foi dado.
+  Com tudo isso em mente, esperasse que esse aplicativo seja essencial para uma pessoa que está pensando em adotar um sistema de vigilancia e segurança, demonstrando um uso basico e de facil acesso
+a uma camera que registre tudo o que vê sem precisar de equipamentos com preços altos e de uso complexo.
 
 Modelagem Funcional do SPV (MF)
 
@@ -17,3 +30,5 @@ Análise dos Resultados do Teste de Campo
 Conclusões
 
 Referências Bibliográficas
+
+FENAVIST. 2019. VI ESSEG: Estudo do Setor de Segurança Privada. [S. l.]: Editora Gráfica Bernardi Ltda.
