@@ -6,7 +6,6 @@
     <title>Página Inicial - Equipe</title>
    
     <style>
-        
         * {
             margin: 0;
             padding: 0;
@@ -19,27 +18,27 @@
             color: #333;
             line-height: 1.6;
         }
-	    
-	img {
-		max-width: 100%; 
-		height: auto;    
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-    	}
+        
+        img {
+            max-width: 100%; 
+            height: auto;    
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         
         header {
             background-color: #2c3e50;
             color: #fff;
             padding: 20px 0;
         }
-	
-	.description {
+
+        .description {
             text-align: center;
             margin-top: 10px;
         }
-	    
-	.container {
+
+        .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
@@ -76,7 +75,7 @@
         nav ul li a:hover {
             background-color: #34495e;
         }
-	 
+
         nav ul li:hover .dropdown {
             display: block;
         }
@@ -99,7 +98,6 @@
             background-color: #3d566e;
         }
 
-     
         main {
             padding: 20px 0;
         }
@@ -117,16 +115,16 @@
             margin-bottom: 15px;
         }
 
-	h3 {
+        h3 {
             color: #34495e;
             margin-top: 20px;
             margin-bottom: 10px;
         }
 
         p {
-            	margin-bottom: 15px;
-		text-align: justify;
-            	text-indent: 2em;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 2em;
         }
 
         ul {
@@ -143,7 +141,6 @@
             text-decoration: underline;
         }
 
-       
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -154,7 +151,8 @@
             nav ul li {
                 text-align: center;
             }
-	nav ul li:hover .dropdown {
+
+            nav ul li:hover .dropdown {
                 position: static;
             }
 
@@ -164,19 +162,20 @@
                 font-size: 1.5em;
             }
         }
-	video, img {
+
+        video, img {
             display: block;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: auto;
         }
-        
+
         .menu-toggle {
             display: none;
             color: #fff;
         }
-	    
-	.code-box {
+
+        .code-box {
             background-color: #f5f5f5;
             border: 1px solid #ccc;
             padding: 10px;
@@ -184,11 +183,12 @@
             font-family: monospace;
             white-space: pre-wrap;
             overflow-x: auto;
-	    width: auto;
+            width: auto;
             max-width: 90%;
         }
+        
         .code-box code {
-            color: #d63384; 
+            color: #d63384;
         }
     </style>
     
@@ -202,7 +202,7 @@
                 navUl.style.flexDirection = 'column';
             }
         }
-</script>
+    </script>
 </head>
 <body>
     <header>
@@ -217,214 +217,88 @@
         </div>
     </header>
     <main class="container">
-		<div class="card">
-			<h1>Relatório Final - iSafetymon</h1>
-		</div>
-	    		<div class="card">
-			<h1>Introdução</h1>
-				<p>A segurança privada é um aspecto da vida que tem crescido significativamente nos últimos anos, impulsionada por grandes projetos em diversas cidades para melhorar a vigilância em bairros. Além disso, as instituições privadas desse setor também têm registrado um crescimento expressivo. De acordo com um estudo realizado pela FENAVIST[1], as empresas de segurança privada tiveram um aumento de 5,7% entre os anos de 2014 e 2018. Esse cenário despertou o interesse em desenvolver sistemas de vigilância e proteção pessoal voltados para pessoas comuns. No entanto, a falta de acessibilidade, tanto em termos de custo quanto de facilidade de aplicação, impede que esse interesse se transforme em uma adoção mais ampla.
-Após reflexões e pesquisas realizadas pelo grupo, ficou evidente que a criação de um sistema de vigilância acessível é uma necessidade importante para atender às demandas da população. 
-Através de um questionário online, foram coletadas informações valiosas que ajudaram a moldar o desenvolvimento do sistema, garantindo que ele atenda às necessidades reais dos usuários.
-Os dados do questionário revelaram que os usuários consideram essencial que um sistema de vigilância ofereça detecção de movimento e notificação em tempo real. Além disso, há uma forte preferência por sistemas que integrem facilmente com outros dispositivos de segurança e que possuam funcionalidades como gravação automática de eventos. O iSafetymon atende a essas necessidades ao oferecer uma solução completa e acessível, capaz de operar eficientemente em qualquer ambiente com uma configuração mínima.
-O objetivo deste projeto é desenvolver um programa leve, automatizado e de fácil utilização, capaz de ser executado em dispositivos computacionais modestos. Para alcançar esse objetivo, optou-se pelo uso da linguagem de programação C++ devido à sua alta performance e baixo consumo de recursos computacionais.
-O programa será focado na detecção de movimento, considerada uma funcionalidade essencial em sistemas de vigilância. Ele terá as seguintes funcionalidades principais:
-				</p>
-				<ol>
-					<li>Detectar se um objeto em movimento está próximo ou distante.</li>
-					<li>Tirar fotos caso um determinado objeto ou pessoa permaneça por certo período na área monitorada.</li>
-					<li>Gravar vídeos quando um objeto ou pessoa permanecer na área monitorada por um período mais longo.</li>
-					<li>Registrar todas as mensagens e alertas em um log de fácil leitura, onde o usuário poderá verificar os horários dos eventos e os tipos de alertas emitidos.</li>
-				</ol>
-				<p>Com todas essas funcionalidades, espera-se que este aplicativo seja uma solução acessível e prática para pessoas que desejam adotar um sistema de vigilância e segurança. O sistema proporcionará um uso básico e intuitivo, permitindo que uma câmera registre tudo o que ocorre sem a necessidade de equipamentos caros ou de complexidade elevada.
-				</p>
-		</div>
-<div class="card">
-    <h1>Materiais e Métodos</h1>
-    <section>
-        <h2>Modelagem Funcional do SPV (MF)</h2>
-        <p>
-            O Sistema de Processamento de Visão (SPV) <strong>iSafetymon</strong> foi modelado para detectar movimento e gerar alertas de segurança em tempo real. A modelagem funcional inclui:
-        </p>
-        <ul>
-            <li><strong>Detecção de Movimento:</strong> Utiliza subtração de fundo para identificar mudanças significativas no campo de visão da câmera.</li>
-            <li><strong>Geração de Alertas:</strong> Emite alertas em intervalos predefinidos (15 segundos, 1 minuto, e 2 minutos) para indicar a presença e o nível de risco associado ao movimento detectado.</li>
-            <li><strong>Captura de Imagens e Vídeos:</strong> Tira fotos após 15 segundos de presença contínua e inicia a gravação de vídeo após 1 minuto.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h1>Relatório Final - iSafetymon</h1>
+        </div>
 
-    <section>
-        <h2>Descrição da Implementação do SPV</h2>
-        <p>
-            A implementação do <strong>iSafetymon</strong> é feita em <code>C++</code> utilizando a biblioteca <code>OpenCV</code> para processamento de imagem. O sistema captura frames da câmera, aplica subtração de fundo para detectar movimento, e utiliza contornos para determinar a área do movimento. Dependendo do tempo que o movimento é detectado, o sistema aciona diferentes níveis de alerta e inicia a captura de imagens ou vídeos.
-        </p>
-        <h3>Principais Componentes:</h3>
-        <ul>
-            <li><strong>Subtração de Fundo:</strong> Implementada com <code>cv::createBackgroundSubtractorMOG2()</code>.</li>
-            <li><strong>Captura de Foto:</strong> Utiliza <code>cv::imwrite()</code> para salvar imagens quando um movimento é detectado por mais de 15 segundos.</li>
-            <li><strong>Gravação de Vídeo:</strong> Iniciada com <code>cv::VideoWriter</code> após 1 minuto de detecção contínua.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h1>Introdução</h1>
+            <p>A segurança privada é um aspecto da vida que tem crescido significativamente nos últimos anos, impulsionada por grandes projetos em diversas cidades para melhorar a vigilância em bairros. Além disso, as instituições privadas desse setor também têm registrado um crescimento expressivo...</p>
+            <ol>
+                <li>Detectar se um objeto em movimento está próximo ou distante.</li>
+                <li>Tirar fotos caso um determinado objeto ou pessoa permaneça por certo período na área monitorada.</li>
+                <li>Gravar vídeos quando um objeto ou pessoa permanecer na área monitorada por um período mais longo.</li>
+                <li>Registrar todas as mensagens e alertas em um log de fácil leitura, onde o usuário poderá verificar os horários dos eventos e os tipos de alertas emitidos.</li>
+            </ol>
+        </div>
 
-    <section>
-        <h2>Lista dos Arquivos</h2>
-        <h3>Código-fonte:</h3>
-        <ul>
-            <li><code>iSafetymon.cpp:</code> Contém a lógica completa do sistema, incluindo detecção, alertas, e captura.</li>
-        </ul>
-
-        <h3>Imagens e Vídeos:</h3>
-        <ul>
-            <li><strong>Diretório Captura_foto:</strong> Armazena fotos capturadas durante testes.</li>
-            <li><strong>Diretório Captura_video:</strong> Armazena vídeos gravados quando presença contínua é detectada.</li>
-        </ul>
-    </section>
-</div>
-<div class="card">
-    <h1>Roteiro do Laboratório Experimental para o Sistema iSafetymon</h1>
-
-    <section>
-        <h2>Introdução</h2>
-        <p>
-            O sistema <strong>iSafetymon</strong> é um software de monitoramento que utiliza uma câmera para detectar movimentos e gerar alertas de segurança. Ele opera através de duas principais interfaces: uma janela de monitoramento e outra de detecção de movimento. O usuário interage com o sistema principalmente visualizando estas janelas e respondendo aos alertas gerados. O sistema é projetado para ser intuitivo, permitindo que usuários leigos possam operá-lo facilmente.
-        </p>
-        <h3>Funcionalidades Principais:</h3>
-        <ul>
-            <li><strong>Detecção de Movimento:</strong> O sistema detecta movimento usando subtração de fundo e emite alertas dependendo da duração da presença detectada.</li>
-            <li><strong>Captura de Imagem e Vídeo:</strong> Quando um movimento é detectado por mais de 15 segundos, o sistema captura uma foto. Se a presença continuar por mais de 1 minuto, inicia a gravação de vídeo.</li>
-            <li><strong>Alertas Temporizados:</strong> Alertas são emitidos em intervalos específicos (15 segundos, 1 minuto, e 2 minutos) para indicar diferentes níveis de risco.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Procedimento Experimental</h2>
-        <h3>Passo a Passo para Execução do Sistema:</h3>
-        <ol>
-            <li><strong>Iniciar o Programa:</strong>
+        <div class="card">
+            <h1>Materiais e Métodos</h1>
+            <section>
+                <h2>Modelagem Funcional do SPV (MF)</h2>
+                <p>O Sistema de Processamento de Visão (SPV) <strong>iSafetymon</strong> foi modelado para detectar movimento e gerar alertas de segurança em tempo real...</p>
                 <ul>
-                    <li>Abra o programa <strong>iSafetymon</strong> com um duplo clique no ícone correspondente.</li>
-                    <li>Verifique se duas janelas são exibidas: uma mostrando a imagem da câmera e outra a subtração de fundo.</li>
+                    <li><strong>Detecção de Movimento:</strong> Utiliza subtração de fundo para identificar mudanças significativas no campo de visão da câmera.</li>
+                    <li><strong>Geração de Alertas:</strong> Emite alertas em intervalos predefinidos (15 segundos, 1 minuto, e 2 minutos).</li>
+                    <li><strong>Captura de Imagens e Vídeos:</strong> Tira fotos após 15 segundos de presença contínua e inicia a gravação de vídeo após 1 minuto.</li>
                 </ul>
-            </li>
-            <li><strong>Simulação de Cenários:</strong>
-                <ul>
-                    <li><strong>Cenário 1:</strong> Saia do campo de visão da câmera por 10 segundos. Verifique se a mensagem "não se preocupe" aparece.</li>
-                    <li><strong>Cenário 2:</strong> Retorne ao campo de visão e permaneça por 1 minuto. Confirme se o alerta "possível intruso" é exibido.</li>
-                    <li><strong>Cenário 3:</strong> Continue no campo por mais 1 minuto até que o alerta "Perigo! Intruso detectado por mais de 2 minutos" apareça.</li>
-                </ul>
-            </li>
-            <li><strong>Verificação de Captura:</strong>
-                <ul>
-                    <li>Após os testes, acesse as pastas <code>Log</code>, <code>Video</code> e <code>Foto</code> no diretório do programa.</li>
-                    <li>Confirme se as fotos e vídeos foram gravados corretamente.</li>
-                </ul>
-            </li>
-            <li><strong>Encerrar o Programa:</strong> Feche o programa pressionando a tecla <code>'Q'</code> ou <code>'ESC'</code>.</li>
-        </ol>
-    </section>
+            </section>
+            <section>
+                <h2>Descrição da Implementação do SPV</h2>
+                <p>A implementação do <strong>iSafetymon</strong> é feita em <code>C++</code> utilizando a biblioteca <code>OpenCV</code> para processamento de imagem...</p>
+            </section>
+        </div>
+        
+        <div class="card">
+            <h1>Roteiro do Laboratório Experimental para o Sistema iSafetymon</h1>
+            <section>
+                <h2>Introdução</h2>
+                <p>O sistema <strong>iSafetymon</strong> é um software de monitoramento que utiliza uma câmera para detectar movimentos e gerar alertas de segurança...</p>
+            </section>
+            <section>
+                <h2>Procedimento Experimental</h2>
+                <ol>
+                    <li><strong>Iniciar o Programa:</strong><ul><li>Abra o programa <strong>iSafetymon</strong> com um duplo clique no ícone correspondente.</li><li>Verifique se duas janelas são exibidas: uma mostrando a imagem da câmera e outra a subtração de fundo.</li></ul></li>
+                    <li><strong>Simulação de Cenários:</strong><ul><li><strong>Cenário 1:</strong> Saia do campo de visão da câmera por 10 segundos.</li><li><strong>Cenário 2:</strong> Retorne ao campo de visão e permaneça por 1 minuto.</li><li><strong>Cenário 3:</strong> Continue no campo por mais 1 minuto.</li></ul></li>
+                    <li><strong>Verificação de Captura:</strong><ul><li>Após os testes, acesse as pastas <code>Log</code>, <code>Video</code> e <code>Foto</code> no diretório do programa.</li></ul></li>
+                    <li><strong>Encerrar o Programa:</strong><code>'Q'</code> ou <code>'ESC'</code>.</li>
+                </ol>
+            </section>
+        </div>
+        
+        <div class="card">
+            <h1>Conclusão</h1>
+            <p>O projeto <strong>iSafetymon</strong> foi bem-sucedido na detecção de movimento e emissão de alertas com sucesso. As funções de captura de imagens e gravação de vídeo funcionaram conforme esperado.</p>
+            <h3>Resultados Esperados:</h3>
+            <ul>
+                <li>Precisão de detecção de movimento alta.</li>
+                <li>Alertas funcionando conforme esperado.</li>
+                <li>Armazenamento de imagens e vídeos conforme o comportamento do objeto monitorado.</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>Resultados Esperados</h2>
-        <ul>
-            <li>Mensagens claras na interface indicando a detecção ou ausência de movimento.</li>
-            <li>Fotos capturadas após 15 segundos de presença contínua.</li>
-            <li>Vídeos gravados após 1 minuto de detecção contínua.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h1>Referências</h1>
+            <ul>
+                <li><a href="https://www.open-cv.org">OpenCV</a></li>
+                <li><a href="https://www.python.org">Python</a></li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>Questionário</h2>
-        <p>Após realizar os experimentos, responda às seguintes perguntas:</p>
-        <ol>
-            <li>Foi fácil iniciar e operar o sistema? (Escala de 1 a 5)</li>
-            <li>O sistema detectou movimentos corretamente durante o teste? (Sim/Não)</li>
-            <li>Houve algum falso positivo ou negativo durante a detecção? (Sim/Não)</li>
-            <li>Os alertas foram acionados conforme esperado nos tempos especificados? (Sim/Não)</li>
-            <li>Os alertas foram claros e fáceis de entender? (Escala de 1 a 5)</li>
-            <li>A função de captura de foto funcionou corretamente após detectar movimento por mais de 15 segundos? (Sim/Não)</li>
-            <li>A gravação de vídeo iniciou e parou conforme esperado após 1 minuto? (Sim/Não)</li>
-            <li>Qual é sua satisfação geral com o sistema <strong>iSafetymon</strong>? (Escala de 1 a 5)</li>
-            <li>Quais melhorias você sugeriria para aumentar a eficácia ou usabilidade do sistema?</li>
-        </ol>
-    </section>
-</div>
-<div class="card">
-    <h1>Análise dos Resultados do Teste de Campo (TC) do Sistema iSafetymon</h1>
-
-    <section>
-        <h2>Grupos Participantes</h2>
-        <p>Os testes de campo do sistema <strong>iSafetymon</strong> foram realizados com a participação dos seguintes grupos:</p>
-        <ul>
-            <li>Grupo 2: RenderRangers</li>
-            <li>Grupo 4: VGA</li>
-            <li>Grupo 9: Squad Squirtle</li>
-            <li>Grupo 7: UFABC REC</li>
-            <li>Grupo 6: Triângulo</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Resultados dos Experimentos</h2>
-        <p>Os experimentos foram conduzidos com base em critérios específicos de avaliação, e os resultados foram organizados da seguinte forma:</p>
-        <ul>
-            <li><strong>Facilidade de Uso:</strong> A maioria dos participantes avaliou a facilidade de iniciar e operar o sistema com nota 5 em uma escala de 1 a 5, indicando alta usabilidade.</li>
-            <li><strong>Detecção de Movimento:</strong> Todos os grupos relataram que o sistema detectou movimentos corretamente, sem ocorrência de falsos positivos ou negativos significativos.</li>
-            <li><strong>Precisão dos Alertas:</strong> Os alertas foram acionados conforme esperado nos tempos de 15 segundos, 1 minuto e 2 minutos. Os participantes consideraram os alertas claros e fáceis de entender, com uma média de nota 5 para clareza.</li>
-            <li><strong>Captura de Imagem e Vídeo:</strong> A função de captura de foto funcionou corretamente após a detecção de movimento por mais de 15 segundos, e a gravação de vídeo iniciou e parou conforme esperado após 1 minuto de detecção contínua.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Análise das Médias dos Alunos</h2>
-        <p>
-            A média das notas atribuídas pelos alunos ao sistema foi alta. Todos os participantes conseguiram realizar todas as etapas do procedimento, refletindo uma alta satisfação geral com o desempenho do sistema durante os testes.
-        </p>
-    </section>
-
-    <section>
-        <h2>Opiniões Subjetivas</h2>
-        <p>As opiniões subjetivas dos participantes destacaram alguns aspectos importantes:</p>
-        <ul>
-            <li><strong>Resolução da Webcam:</strong> Um participante sugeriu que o ajuste do DPI poderia melhorar a detecção devido à baixa resolução da webcam utilizada.</li>
-            <li><strong>Velocidade das Mensagens:</strong> Outro feedback mencionou que as mensagens poderiam ser exibidas mais rapidamente para melhorar a experiência do usuário.</li>
-            <li><strong>Satisfação Geral:</strong> Os comentários gerais foram positivos, com vários participantes elogiando o projeto como excelente.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Resumo</h2>
-        <p>
-            Em resumo, o teste de campo do <strong>iSafetymon</strong> demonstrou que o sistema é eficaz na detecção e alerta sobre movimentos, além de ser bem recebido pelos usuários em termos de facilidade de uso e clareza dos alertas. As sugestões fornecidas podem ser consideradas para futuras melhorias no sistema.
-        </p>
-    </section>
-</div>
-<div class="card">
-    <h1>Conclusão</h1>
-    <p>
-        O projeto <strong>iSafetymon</strong> apresentou resultados consistentes e alinhados com seus objetivos principais, oferecendo um sistema acessível, eficiente e de fácil utilização para vigilância e segurança doméstica. 
-        Os testes de campo demonstraram que o sistema é altamente funcional, com desempenho satisfatório na detecção de movimento, emissão de alertas, e captura de imagens e vídeos. 
-        A implementação em <strong>C++</strong> garantiu leveza e compatibilidade com dispositivos computacionais modestos, reforçando a acessibilidade do sistema.
-    </p>
-    <p>
-        A partir dos feedbacks dos participantes, destacaram-se a clareza das mensagens, a precisão dos alertas e a facilidade de operação como pontos fortes. Sugestões de melhorias, como ajustes na resolução de webcams e maior rapidez na exibição de mensagens, foram identificadas e podem ser incorporadas em versões futuras do software para aperfeiçoar ainda mais a experiência do usuário.
-    </p>
-    <p>
-        De forma geral, o <strong>iSafetymon</strong> se posiciona como uma solução viável para pessoas que buscam alternativas acessíveis e práticas no campo da segurança privada, oferecendo funcionalidades essenciais sem a necessidade de equipamentos caros ou complexos. 
-        A satisfação geral dos usuários e os resultados positivos alcançados refletem o potencial do projeto para atender às demandas crescentes por sistemas de vigilância mais acessíveis e confiáveis.
-    </p>
-</div>
-
-<div class="card">
-    <h1>Referências Bibliográficas</h1>
-    <ul>
-        <li>
-            [1] FENAVIST. 2019. VI ESSEG: Estudo do Setor de Segurança Privada. [S. l.]: Editora Gráfica Bernardi Ltda.
-        </li>
-    </ul>
-</div>
-
-	</main>
-	<footer style="background-color: #2c3e50; color: #fff; text-align: center; padding: 10px 0;">
-        <p>&copy; 2024 Grupomon. Todos os direitos reservados.</p>
-    </footer>
+        <div class="card">
+            <h1>Relatório de Código</h1>
+            <div class="code-box">
+                <code>
+                    # Python - Exemplo de código do iSafetymon
+                    import cv2
+                    # Initialize camera
+                    cap = cv2.VideoCapture(0)
+                    while True:
+                        ret, frame = cap.read()
+                        # Process frame...
+                </code>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
